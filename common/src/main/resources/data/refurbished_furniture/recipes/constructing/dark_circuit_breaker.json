@@ -1,0 +1,18 @@
+{
+  "type": "refurbished_furniture:workbench_constructing",
+  "materials": [
+    {
+      "count": 1,
+      "item": "cfm_wap:light_circuit_breaker"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "cfm_wap:dark_circuit_breaker"
+  },
+  "show_notification": false
+}
