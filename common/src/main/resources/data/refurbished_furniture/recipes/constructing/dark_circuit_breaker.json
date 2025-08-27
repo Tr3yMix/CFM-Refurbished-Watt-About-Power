@@ -3,16 +3,19 @@
   "materials": [
     {
       "count": 1,
-      "item": "cfm_wap:light_circuit_breaker"
+      "ingredient": {
+        "item": "cfm_wap:light_circuit_breaker"
+      }
     },
     {
       "count": 1,
-      "item": "minecraft:black_dye"
+      "ingredient": {
+        "item": "minecraft:black_dye"
+      }
     }
   ],
   "result": {
     "count": 1,
     "item": "cfm_wap:dark_circuit_breaker"
-  },
-  "show_notification": false
+  }
 }

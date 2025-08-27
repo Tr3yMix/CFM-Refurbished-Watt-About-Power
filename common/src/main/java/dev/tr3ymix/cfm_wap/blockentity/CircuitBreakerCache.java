@@ -9,13 +9,16 @@ public class CircuitBreakerCache {
 
     private static final Map<Level, Set<BlockPos>> CIRCUIT_BREAKER_BLOCKS = new HashMap<>();
 
+
     public static void add(Level level, BlockPos pos){
-        CIRCUIT_BREAKER_BLOCKS.computeIfAbsent(level, k-> new HashSet<>()).add(pos);
+        CIRCUIT_BREAKER_BLOCKS.computeIfAbsent(level, k -> new HashSet<>()).add(pos);
     }
 
     public static void remove(Level level, BlockPos pos){
         Set<BlockPos> set = CIRCUIT_BREAKER_BLOCKS.get(level);
-        if(set != null) set.remove(pos);
+        if(set != null){
+            set.remove(pos);
+        }
     }
 
     public static Set<BlockPos> get(Level level){

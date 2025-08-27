@@ -214,6 +214,7 @@ public class CircuitBreakerBlockEntity extends ElectricitySourceLootBlockEntity 
         if(!level.isClientSide){
             CircuitBreakerCache.add(level, this.getBlockPos());
         }
+
     }
 
     @Override
@@ -222,7 +223,6 @@ public class CircuitBreakerBlockEntity extends ElectricitySourceLootBlockEntity 
         if(!this.level.isClientSide){
             CircuitBreakerCache.remove(this.level, this.getBlockPos());
         }
-
         super.setRemoved();
     }
 

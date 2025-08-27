@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "cfm_circuit_breaker:circuit_breaker"
+    "cfm_wap:light_circuit_breaker",
+    "cfm_wap:dark_circuit_breaker"
   ]
 }

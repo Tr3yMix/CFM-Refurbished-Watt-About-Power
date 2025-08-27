@@ -24,7 +24,7 @@ public interface IProcessingCircuitBreakerBlock extends IProcessingBlock {
                 int processingTime = this.getProcessingTime();
                 if (processingTime < totalProcessingTime) {
                     this.setProcessingTime(processingTime + 1);
-                    if (this.requiresEnergy() && this.getEnergyMode() == IProcessingBlock.EnergyMode.ONLY_WHEN_PROCESSING) {
+                    if (this.requiresEnergy() && this.getEnergyMode() == EnergyMode.ONLY_WHEN_PROCESSING) {
                         this.removeEnergy(getEnergyRate());
                     }
                 }
@@ -35,7 +35,7 @@ public interface IProcessingCircuitBreakerBlock extends IProcessingBlock {
                 }
             }
         }
-        if (this.requiresEnergy() && this.getEnergyMode() == IProcessingBlock.EnergyMode.ALWAYS_CONSUME && this.getEnergy() > 0) {
+        if (this.requiresEnergy() && this.getEnergyMode() == EnergyMode.ALWAYS_CONSUME && this.getEnergy() > 0) {
             this.addEnergy(-getEnergyRate());
         }
 

@@ -3,20 +3,25 @@
   "materials": [
     {
       "count": 14,
-      "item": "minecraft:iron_ingot"
+      "ingredient": {
+        "item": "minecraft:iron_ingot"
+      }
     },
     {
       "count": 12,
-      "item": "minecraft:copper_ingot"
+      "ingredient": {
+        "item": "minecraft:copper_ingot"
+      }
     },
     {
       "count": 8,
-      "item": "minecraft:redstone_block"
+      "ingredient": {
+        "item": "minecraft:redstone_block"
+      }
     }
   ],
   "result": {
     "count": 1,
     "item": "cfm_wap:light_circuit_breaker"
-  },
-  "show_notification": false
+  }
 }

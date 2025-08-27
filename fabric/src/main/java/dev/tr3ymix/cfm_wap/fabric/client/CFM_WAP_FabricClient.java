@@ -1,6 +1,7 @@
-package dev.tr3ymix.cfm_wap.client;
+package dev.tr3ymix.cfm_wap.fabric.client;
 
 import com.mrcrayfish.furniture.refurbished.client.registration.ScreenRegister;
+import dev.tr3ymix.cfm_wap.client.CFM_WAP_Client;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.gui.screens.Screen;
@@ -24,6 +25,5 @@ public final class CFM_WAP_FabricClient implements ClientModInitializer {
         });
 
         CFM_WAP_Client.registerBlockEntityRenderers(BlockEntityRenderers::register);
-
     }
 }

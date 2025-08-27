@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.tr3ymix.cfm_wap.CFM_WAP_Fabric"
+      "dev.tr3ymix.cfm_wap.fabric.CFM_WAP_Fabric"
     ],
     "client": [
-      "dev.tr3ymix.cfm_wap.client.CFM_WAP_FabricClient"
+      "dev.tr3ymix.cfm_wap.fabric.client.CFM_WAP_FabricClient"
     ]
   },
   "mixins": [
@@ -27,12 +27,12 @@
   ],
   "depends": {
     "fabricloader": ">=0.17.2",
-    "minecraft": "~1.20.1",
+    "minecraft": "~1.20.4",
     "java": ">=17",
-    "architectury": ">=9.2.14",
+    "architectury": ">=11.1.17",
     "fabric-api": "*",
-    "framework": ">=0.7.15",
-    "refurbished_furniture": ">=1.0.14"
+    "framework": ">=0.7.12",
+    "refurbished_furniture": ">=1.0.12"
   },
   "suggests": {
     "another-mod": "*"
