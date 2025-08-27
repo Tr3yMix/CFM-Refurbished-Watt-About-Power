@@ -1,17 +1,17 @@
 modLoader = "javafml"
 loaderVersion = "[2,)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "MIT"
 
 [[mods]]
 modId = "cfm_wap"
 version = "${version}"
 displayName = "CFM Refurbished: Watt About Power?"
-authors = "Me!"
+authors = "Tr3yMix"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Introduces a circuit breaker block that powers the electricity network in "MrCrayfish's Furniture Mod: Refurbished" using power from other mods.
 '''
-#logoFile = ""
+logoFile = "assets/neoforge/logo.png"
 
 [[dependencies.cfm_wap]]
 modId = "neoforge"
@@ -33,6 +33,21 @@ type = "required"
 versionRange = "[11.1.17,)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies.cfm_wap]]
+modId = "framework"
+type = "required"
+versionRange = "[0.7.12,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.cfm_wap]]
+modId = "refurbished_furniture"
+type = "required"
+versionRange = "[1.0.12,)"
+ordering = "AFTER"
+side = "BOTH"
+
 
 [[mixins]]
 config = "cfm_wap.mixins.json"
