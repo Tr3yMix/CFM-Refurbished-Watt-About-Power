@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+    "ambientocclusion": false,
 	"texture_size": [64, 32],
 	"textures": {
 		"3": "cfm_wap:block/dark_circuit_breaker",
