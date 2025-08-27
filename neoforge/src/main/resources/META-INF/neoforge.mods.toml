@@ -9,9 +9,9 @@ version = "${version}"
 displayName = "CFM Refurbished: Watt about Power?"
 authors = "Tr3yMix"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Introduces a circuit breaker block that powers the electricity network in "MrCrayfish's Furniture Mod: Refurbished" using power from other mods.
 '''
-#logoFile = ""
+logoFile = "assets/neoforge/logo.png"
 
 [[dependencies.cfm_wap]]
 modId = "neoforge"
