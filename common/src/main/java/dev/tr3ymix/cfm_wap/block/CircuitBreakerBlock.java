@@ -2,6 +2,7 @@ package dev.tr3ymix.cfm_wap.block;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.mojang.serialization.MapCodec;
 import com.mrcrayfish.furniture.refurbished.block.FurnitureHorizontalEntityBlock;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.mrcrayfish.furniture.refurbished.data.tag.BlockTagSupplier;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -64,14 +66,9 @@ public class CircuitBreakerBlock extends FurnitureHorizontalEntityBlock implemen
         return CircuitBreakerBlockShapes.getShape(blockState.getValue(DIRECTION));
     }
 
-
-    //work on
-    @SuppressWarnings("deprecation")
     @Override
-    public @NotNull InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player,
-                                          InteractionHand interactionHand, BlockHitResult blockHitResult) {
-
-        if(blockState.getValue(DIRECTION) != blockHitResult.getDirection()){
+    protected @NotNull InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
+        if(blockState.getValue(DIRECTION).getOpposite() == blockHitResult.getDirection()){
             if(!level.isClientSide){
                 BlockEntity blockEntity = level.getBlockEntity(blockPos);
                 if(blockEntity instanceof CircuitBreakerBlockEntity circuitBreaker){
@@ -82,6 +79,7 @@ public class CircuitBreakerBlock extends FurnitureHorizontalEntityBlock implemen
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
+
     }
 
     @Override
@@ -107,5 +105,11 @@ public class CircuitBreakerBlock extends FurnitureHorizontalEntityBlock implemen
         if(faceDirection == Direction.DOWN || faceDirection == Direction.UP) return null;
 
         return this.defaultBlockState().setValue(DIRECTION, faceDirection.getOpposite());
+    }
+
+    @Override
+    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
+        //noinspection DataFlowIssue
+        return null;
     }
 }

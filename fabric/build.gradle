@@ -27,21 +27,19 @@ configurations {
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
-    // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
 
-    include modApi('teamreborn:energy:3.0.0'){
+    include modApi('teamreborn:energy:4.1.0'){
         exclude(group: "net.fabricmc.fabric-api")
     }
 
     modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
 
-
     modImplementation "com.mrcrayfish:framework-fabric:${minecraft_version}-${framework_version}"
     modImplementation "com.mrcrayfish:refurbished_furniture-fabric:${minecraft_version}-${refurbished_furniture}"
 
-    modRuntimeOnly "curse.maven:reborncore-237903:6788255"
-    modRuntimeOnly "curse.maven:techreborn-233564:6788256"
+    modRuntimeOnly "curse.maven:reborncore-237903:6664366"
+    modRuntimeOnly "curse.maven:techreborn-233564:6664367"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')

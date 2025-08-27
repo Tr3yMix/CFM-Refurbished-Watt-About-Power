@@ -1,13 +1,13 @@
-package dev.tr3ymix.cfm_wap.energy.forge;
+package dev.tr3ymix.cfm_wap.energy.neoforge;
 
 import dev.tr3ymix.cfm_wap.energy.CommonEnergyStorage;
-import net.minecraftforge.energy.IEnergyStorage;
+import net.neoforged.neoforge.energy.IEnergyStorage;
 
-@SuppressWarnings("unused")
 public class EnergyHandlerFactoryImpl {
 
     public static Object from(CommonEnergyStorage storage) {
         return new IEnergyStorage() {
+
             @Override
             public int receiveEnergy(int i, boolean b) {
                 return storage.insertEnergy(i, b);

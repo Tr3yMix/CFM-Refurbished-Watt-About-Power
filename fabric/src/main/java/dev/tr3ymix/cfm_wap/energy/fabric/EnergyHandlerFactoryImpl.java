@@ -9,19 +9,18 @@ public class EnergyHandlerFactoryImpl {
 
     public static Object from(CommonEnergyStorage storage) {
         return new SimpleEnergyStorage(storage.getCapacity(), storage.getMaxTransfer(), storage.getMaxTransfer()){
-            @SuppressWarnings("UnstableApiUsage")
             @Override
             protected void onFinalCommit() {
                 storage.setEnergy((int)this.amount);
             }
 
             @Override
-            public long insert(long maxAmount, @SuppressWarnings("UnstableApiUsage") TransactionContext transaction) {
+            public long insert(long maxAmount, TransactionContext transaction) {
                 return storage.insertEnergy((int) maxAmount, false);
             }
 
             @Override
-            public long extract(long maxAmount, @SuppressWarnings("UnstableApiUsage") TransactionContext transaction) {
+            public long extract(long maxAmount, TransactionContext transaction) {
                 return storage.extractEnergy((int) maxAmount, false);
             }
         };

@@ -13,6 +13,7 @@ import dev.tr3ymix.cfm_wap.inventory.CircuitBreakerMenu;
 import dev.tr3ymix.cfm_wap.registry.ModBlockEntities;
 import dev.tr3ymix.cfm_wap.util.Utils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -214,6 +215,7 @@ public class CircuitBreakerBlockEntity extends ElectricitySourceLootBlockEntity 
         if(!level.isClientSide){
             CircuitBreakerCache.add(level, this.getBlockPos());
         }
+
     }
 
     @Override
@@ -222,13 +224,12 @@ public class CircuitBreakerBlockEntity extends ElectricitySourceLootBlockEntity 
         if(!this.level.isClientSide){
             CircuitBreakerCache.remove(this.level, this.getBlockPos());
         }
-
         super.setRemoved();
     }
 
     @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
+    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadAdditional(tag, provider);
         if(tag.contains("Enabled", 1)) {
             this.enabled = tag.getBoolean("Enabled");
         }
@@ -238,8 +239,8 @@ public class CircuitBreakerBlockEntity extends ElectricitySourceLootBlockEntity 
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
-        super.saveAdditional(tag);
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveAdditional(tag, provider);
         tag.putBoolean("Enabled", this.enabled);
         tag.putInt("Energy", this.ENERGY_STORAGE.getEnergy());
     }

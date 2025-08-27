@@ -10,7 +10,7 @@ public class Utils {
     }
 
     public static ResourceLocation resource(String name){
-        return new ResourceLocation("cfm_wap", name);
+        return ResourceLocation.fromNamespaceAndPath("cfm_wap", name);
     }
 
     public static MutableComponent translation(String category, String path, Object... args){

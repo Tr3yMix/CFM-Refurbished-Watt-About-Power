@@ -1,7 +1,9 @@
 package dev.tr3ymix.cfm_wap;
 
 import com.mrcrayfish.furniture.refurbished.core.ModCreativeTabs;
+import dev.architectury.platform.Platform;
 import dev.architectury.registry.CreativeTabRegistry;
+import dev.architectury.utils.Env;
 import dev.tr3ymix.cfm_wap.registry.ModBlockEntities;
 import dev.tr3ymix.cfm_wap.registry.ModBlocks;
 import dev.tr3ymix.cfm_wap.registry.ModMenuTypes;
@@ -17,11 +19,21 @@ public final class CFM_WAP {
     }
 
     public static void addCreativeModeItems(){
-        //noinspection UnstableApiUsage
-        CreativeTabRegistry.modify(CreativeTabRegistry.defer(ModCreativeTabs.MAIN.getId()),
-                (featureFlagSet, creativeTabOutput, b) -> {
-                    creativeTabOutput.accept(ModBlocks.LIGHT_CIRCUIT_BREAKER.get().asItem());
-                    creativeTabOutput.accept(ModBlocks.DARK_CIRCUIT_BREAKER.get().asItem());
-                });
+
+        //comment for running neoforge and uncomment for running fabric *for now
+
+
+        if(Platform.getEnvironment() == Env.CLIENT) {
+            //noinspection UnstableApiUsage
+            CreativeTabRegistry.modify(
+                    CreativeTabRegistry.defer(ModCreativeTabs.MAIN.getId()),
+                    (featureFlagSet, creativeTabOutput, b) -> {
+                        ModBlocks.LIGHT_CIRCUIT_BREAKER.ifPresent(block -> creativeTabOutput.accept(block.asItem()));
+                        ModBlocks.DARK_CIRCUIT_BREAKER.ifPresent(block -> creativeTabOutput.accept(block.asItem()));
+                    });
+        }
+
+
+
     }
 }

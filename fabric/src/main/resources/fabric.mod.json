@@ -27,12 +27,12 @@
   ],
   "depends": {
     "fabricloader": ">=0.17.2",
-    "minecraft": "~1.20.1",
+    "minecraft": "~1.21.1",
     "java": ">=17",
-    "architectury": ">=9.2.14",
+    "architectury": ">=13.0.8",
     "fabric-api": "*",
-    "framework": ">=0.7.15",
-    "refurbished_furniture": ">=1.0.14"
+    "framework": ">=0.9.6",
+    "refurbished_furniture": ">=1.0.16"
   },
   "suggests": {
     "another-mod": "*"
@@ -45,3 +45,4 @@
     }
   }
 }
+

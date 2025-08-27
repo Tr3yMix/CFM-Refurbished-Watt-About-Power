@@ -11,4 +11,4 @@ rootProject.name = 'cfm_wap'
 
 include 'common'
 include 'fabric'
-include 'forge'
+include 'neoforge'
