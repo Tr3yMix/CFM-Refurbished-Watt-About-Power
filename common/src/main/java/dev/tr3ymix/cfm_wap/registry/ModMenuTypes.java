@@ -11,8 +11,6 @@ import net.minecraft.world.inventory.MenuType;
 
 public class ModMenuTypes {
 
-
-
     public static final DeferredRegister<MenuType<?>> MENU_TYPES =
             DeferredRegister.create(CFM_WAP.MOD_ID, Registries.MENU);
 
