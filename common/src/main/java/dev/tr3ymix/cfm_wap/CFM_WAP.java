@@ -23,6 +23,7 @@ public final class CFM_WAP {
         //comment for running neoforge and uncomment for running fabric *for now
 
 
+
         if(Platform.getEnvironment() == Env.CLIENT) {
             //noinspection UnstableApiUsage
             CreativeTabRegistry.modify(
@@ -32,6 +33,8 @@ public final class CFM_WAP {
                         ModBlocks.DARK_CIRCUIT_BREAKER.ifPresent(block -> creativeTabOutput.accept(block.asItem()));
                     });
         }
+
+         
 
 
 

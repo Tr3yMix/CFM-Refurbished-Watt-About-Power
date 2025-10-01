@@ -13,6 +13,6 @@
   "gui.cfm_wap.status.offline": "Offline",
   "gui.cfm_wap.status.overloaded": "Overloaded",
   "gui.cfm_wap.status.energy": "No Energy",
-  
+
   "gui.cfm_wap.progress": "%sFE / %sFE"
 }
