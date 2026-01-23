@@ -24,7 +24,7 @@ public final class CFM_WAP {
 
 
 
-        if(Platform.getEnvironment() == Env.CLIENT) {
+        if(Platform.getEnvironment() == Env.CLIENT && Platform.isFabric()) {
             //noinspection UnstableApiUsage
             CreativeTabRegistry.modify(
                     CreativeTabRegistry.defer(ModCreativeTabs.MAIN.getId()),
